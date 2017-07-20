@@ -1,0 +1,8 @@
+#Options +FollowSymlinks
+
+#Options +SymLinksIfOwnerMatch
+
+#RewriteEngine On
+
+#RewriteRule ^(.*)$ /public/$1 [L]
+#AddType x-httpd-php56 .php
