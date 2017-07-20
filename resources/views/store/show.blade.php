@@ -3,7 +3,7 @@
 @section('content')
 <div class="container text-center">
 	<div class="page-header">
-	  <h1><i class="fa fa-shopping-cart"></i> Detalle del producto</h1>
+	  <h1><i class="fa fa-shopping-cart"></i>Product Details</h1>
 	</div>
 
 	<div class="row">
@@ -18,11 +18,11 @@
 				<div class="product-info panel">
 					<p>{{ $product->description }}</p>
 					<h3>
-						<span class="label label-success">Precio: ${{ number_format($product->price,2) }}</span>
+						<span class="label label-success">Price: £ {{ number_format($product->price,2) }}</span>
 					</h3>
 					<p>
 						<a class="btn btn-warning btn-block" href="{{ route('cart-add', $product->slug) }}">
-							La quiero <i class="fa fa-cart-plus fa-2x"></i>
+							Buy Now <i class="fa fa-cart-plus fa-2x"></i>
 						</a>
 					</p>
 				</div>
@@ -32,7 +32,7 @@
 
 	<p>
 		<a class="btn btn-primary" href="{{ route('home') }}">
-			<i class="fa fa-chevron-circle-left"></i> Regresar
+			<i class="fa fa-chevron-circle-left"></i> Go Back
 		</a>
 	</p>
 </div>

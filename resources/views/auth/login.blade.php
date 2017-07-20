@@ -3,9 +3,18 @@
 @section('content')
 	<div class="container text-center">
 		<div class="page-header">
-			<h1><i class="fa fa-user"></i> Iniciar sesión</h1>
+			<h1><i class="fa fa-user"></i> Login Page</h1>
 		</div>
 
+		<div class="row">
+			<div class="col-md-offset-2 col-md-8">
+				<div class="page">
+
+				New Client? <a href="/auth/register">Click Here</a>
+
+				</div>
+			</div>
+		</div>
 		<div class="row">
 			<div class="col-md-offset-2 col-md-8">
 				<div class="page">

@@ -4,7 +4,7 @@
 			<i class="fa fa-user"></i> {{ Auth::user()->user }} <span class="caret"></span>
 		</a>
 		<ul class="dropdown-menu" role="menu">
-			<li><a href="{{ route('logout') }}">Finalizar sesión</a></li>
+			<li><a href="{{ route('logout') }}">Log-out</a></li>
 		</ul>
 	</li>
 @else
@@ -13,8 +13,8 @@
 			<i class="fa fa-user"></i> <span class="caret"></span>
 		</a>
 		<ul class="dropdown-menu" role="menu">
-			<li><a href="{{ route('login-get') }}">Iniciar sesión</a></li>
-			<li><a href="{{ route('register-get') }}">Registrarse</a></li>
+			<li><a href="{{ route('login-get') }}">Login</a></li>
+			<li><a href="{{ route('register-get') }}">Sign Up</a></li>
 		</ul>
 	</li>
 @endif

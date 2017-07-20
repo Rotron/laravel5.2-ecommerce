@@ -3,7 +3,7 @@
 @section('content')
 	<div class="container text-center">
 		<div class="page-header">
-		  <h1><i class="fa fa-shopping-cart"></i> Carrito de compras</h1>
+		  <h1><i class="fa fa-shopping-cart"></i> Shopping Cart</h1>
 		</div>
 
 		<div class="table-cart">
@@ -11,7 +11,7 @@
 
 			<p>
 				<a href="{{ route('cart-trash') }}" class="btn btn-danger">
-					Vaciar carrito <i class="fa fa-trash"></i>
+					Empty the cart <i class="fa fa-trash"></i>
 				</a>
 			</p>
 
@@ -19,12 +19,12 @@
 				<table class="table table-striped table-hover table-bordered">
 					<thead>
 						<tr>
-							<th>Imagen</th>
-							<th>Producto</th>
-							<th>Precio</th>
-							<th>Cantidad</th>
+							<th>Image</th>
+							<th>Product</th>
+							<th>Price</th>
+							<th>Quantity</th>
 							<th>Subtotal</th>
-							<th>Quitar</th>
+							<th>Delete</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -32,7 +32,7 @@
 							<tr> 
 								<td><img src="{{ $item->image }}"></td>
 								<td>{{ $item->name }}</td>
-								<td>${{ number_format($item->price,2) }}</td>
+								<td>£ {{ number_format($item->price,2) }}</td>
 								<td>
 									<input 
 										type="number"
@@ -50,7 +50,7 @@
 										<i class="fa fa-refresh"></i>
 									</a>
 								</td>
-								<td>${{ number_format($item->price * $item->quantity,2) }}</td>
+								<td>£ {{ number_format($item->price * $item->quantity,2) }}</td>
 								<td>
 									<a href="{{ route('cart-delete', $item->slug) }}" class="btn btn-danger">
 										<i class="fa fa-remove"></i>
@@ -63,22 +63,22 @@
 				
 				<h3>
 					<span class="label label-success">
-						Total: ${{ number_format($total,2) }}
+						Total: £ {{ number_format($total,2) }}
 					</span>
 				</h3>
 
 			</div>
 			@else
-				<h3><span class="label label-warning">No hay productos en el carrito :(</span></h3>
+				<h3><span class="label label-warning">Your cart is empty!</span></h3>
 			@endif
 			<hr>
 			<p>
 				<a href="{{ route('home') }}" class="btn btn-primary">
-					<i class="fa fa-chevron-circle-left"></i> Seguir comprando
+					<i class="fa fa-chevron-circle-left"></i> Continue shopping
 				</a>
 
 				<a href="{{ route('order-detail') }}" class="btn btn-primary">
-				 Continuar <i class="fa fa-chevron-circle-right"></i>
+				 Checkout <i class="fa fa-chevron-circle-right"></i>
 				</a>
 			</p>
 		</div>

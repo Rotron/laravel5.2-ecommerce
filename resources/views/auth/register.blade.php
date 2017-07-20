@@ -4,7 +4,7 @@
 	<div class="container text-center">
 
 		<div class="page-header">
-		  <h1><i class="fa fa-user"></i> Registrarse</h1>
+		  <h1><i class="fa fa-user"></i> Sign Up</h1>
 		</div>
 
 		<div class="row">
@@ -17,22 +17,22 @@
 					    {!! csrf_field() !!}
 
 					    <div class="form-group">
-					        <label for="name">Nombre</label>
+					        <label for="name">Name</label>
 					        <input class="form-control" type="text" name="name" value="{{ old('name') }}">
 					    </div>
 
 					    <div class="form-group">
-					        <label for="last_name">Apellidos</label>
+					        <label for="last_name">Surname</label>
 					        <input class="form-control" type="text" name="last_name" value="{{ old('last_name') }}">
 					    </div>
 
 					    <div class="form-group">
-					        <label for="email">Correo</label>
+					        <label for="email">E-Mail</label>
 					        <input class="form-control" type="email" name="email" value="{{ old('email') }}">
 					    </div>
 
 					    <div class="form-group">
-					        <label for="user">Usuario</label>
+					        <label for="user">Username</label>
 					        <input class="form-control" type="text" name="user" value="{{ old('user') }}">
 					    </div>
 
@@ -47,12 +47,12 @@
 					    </div>
 
 					    <div class="form-group">
-					        <label for="adrress">Dirección</label>
+					        <label for="adrress">Address</label>
 					        <textarea class="form-control" name="address">{{ old('address') }}</textarea>
 					    </div>
 
 					    <div class="form-group">
-					        <button class="btn btn-primary" type="submit">Crear cuenta</button>
+					        <button class="btn btn-primary" type="submit">Sign up</button>
 					    </div>
 					</form>
 
