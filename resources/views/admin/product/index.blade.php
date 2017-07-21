@@ -25,6 +25,7 @@
                             <th>Category</th>
                             <th>Description</th>
                             <th>Price</th>
+                            <th>Qty</th>
                             <th>Visible</th>
                         </tr>
                     </thead>
@@ -49,6 +50,7 @@
                                 <td>{{ $product->category->name }}</td>
                                 <td>{{ $product->extract }}</td>
                                 <td>£ {{ number_format($product->price,2) }}</td>
+                                 <td>{{ $product->qty }}</td>
                                 <td>{{ $product->visible == 1 ? "Yes" : "No" }}</td>
                             </tr>
                         @endforeach
