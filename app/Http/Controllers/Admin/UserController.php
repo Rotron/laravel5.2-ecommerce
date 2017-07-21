@@ -106,7 +106,9 @@ class UserController extends Controller
         $user->type = $request->get('type');
         $user->address = $request->get('address');
         $user->active = $request->has('active') ? 1 : 0;
-        if($request->get('password') != "") $user->password = $request->get('password');
+
+        if($request->get('password') != "") 
+        $user->password =  bcrypt($request->get('password'));
         
         $updated = $user->save();
         
