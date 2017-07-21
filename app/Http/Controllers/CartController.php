@@ -47,20 +47,23 @@ class CartController extends Controller
     // Update item
     public function update(Product $product, $quantity)
     {
-    	$cart = \Session::get('cart');
-    	$cart[$product->slug]->quantity = $quantity;
-       
+    	$cart = \Session::get('cart');    
+        $cart[$product->slug]->quantity = $quantity;
+        $qty = $cart[$product->slug]->qty ;
+        
         if ($quantity <= "0"){
 
         unset($cart[$product->slug]);
         \Session::put('cart', $cart);
-
         return redirect()->route('cart-show');
         
-        }else{
-     
+        }else if ($quantity > $qty  ) {
+        unset($cart[$product->slug]);
         \Session::put('cart', $cart);
-
+        return \Redirect::route('cart-show')
+                ->with('message', 'Quantity not in Stock');
+        } else {
+        \Session::put('cart', $cart);
         return redirect()->route('cart-show');
 
         }
