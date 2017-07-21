@@ -75,7 +75,7 @@ class PaypalController extends BaseController
 		$transaction = new Transaction();
 		$transaction->setAmount($amount)
 			->setItemList($item_list)
-			->setDescription('Pedido de prueba en mi Laravel App Store');
+			->setDescription('Test order on my Laravel App Store');
 
 		$redirect_urls = new RedirectUrls();
 		$redirect_urls->setReturnUrl(\URL::route('payment.status'))
@@ -95,7 +95,7 @@ class PaypalController extends BaseController
 				$err_data = json_decode($ex->getData(), true);
 				exit;
 			} else {
-				die('Ups! Algo salió mal');
+				die('Oops! Something went wrong');
 			}
 		}
 
@@ -115,7 +115,7 @@ class PaypalController extends BaseController
 		}
 
 		return \Redirect::route('cart-show')
-			->with('error', 'Ups! Error desconocido.');
+			->with('error', 'Oops! Unknown error.');
 
 	}
 
@@ -133,7 +133,7 @@ class PaypalController extends BaseController
 		//if (empty(\Input::get('PayerID')) || empty(\Input::get('token'))) {
 		if (empty($payerId) || empty($token)) {
 			return \Redirect::route('home')
-				->with('message', 'Hubo un problema al intentar pagar con Paypal');
+				->with('message', 'There was a problem trying to pay with Paypal');
 		}
 
 		$payment = Payment::get($payment_id, $this->_api_context);
@@ -164,10 +164,10 @@ class PaypalController extends BaseController
 
 
 			return \Redirect::route('home')
-				->with('message', 'Compra realizada de forma correcta');
+				->with('message', 'Purchase done correctly');
 		}
 		return \Redirect::route('home')
-			->with('message', 'La compra fue cancelada');
+			->with('message', 'Purchase was canceled');
 	}
 
 
