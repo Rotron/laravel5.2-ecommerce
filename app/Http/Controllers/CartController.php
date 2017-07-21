@@ -15,6 +15,15 @@ class CartController extends Controller
 		if(!\Session::has('cart')) \Session::put('cart', array());
 	}
 
+ // Show cart
+    public function conta()
+    {
+        $cart = \Session::get('cart');
+        $total = $this->total();
+        return $total;
+    }
+
+
     // Show cart
     public function show()
     {
