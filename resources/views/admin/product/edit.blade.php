@@ -6,7 +6,7 @@
 		<div class="page-header">
 			<h1>
 				<i class="fa fa-shopping-cart"></i>
-				PRODUCTOS <small>[Editar producto]</small>
+				PRODUCTS <small>[Edit product]</small>
 			</h1>
 		</div>
 
@@ -24,12 +24,12 @@
                         <input type="hidden" name="_method" value="PUT">
                     
                         <div class="form-group">
-                            <label class="control-label" for="category_id">Categoría</label>
+                            <label class="control-label" for="category_id">Category</label>
                             {!! Form::select('category_id', $categories, null, ['class' => 'form-control']) !!}
                         </div>
         
                         <div class="form-group">
-                            <label for="name">Nombre:</label>
+                            <label for="name">Name:</label>
                             
                             {!! 
                                 Form::text(
@@ -37,7 +37,7 @@
                                     null, 
                                     array(
                                         'class'=>'form-control',
-                                        'placeholder' => 'Ingresa el nombre...',
+                                        'placeholder' => 'Insert name...',
                                         'autofocus' => 'autofocus'
                                     )
                                 ) 
@@ -45,7 +45,7 @@
                         </div>
                         
                         <div class="form-group">
-                            <label for="extract">Extracto:</label>
+                            <label for="extract">Short Description:</label>
                             
                             {!! 
                                 Form::text(
@@ -53,14 +53,14 @@
                                     null, 
                                     array(
                                         'class'=>'form-control',
-                                        'placeholder' => 'Ingresa el extracto...',
+                                        'placeholder' => 'Insert a Short Description...',
                                     )
                                 ) 
                             !!}
                         </div>
                         
                         <div class="form-group">
-                            <label for="description">Descripción:</label>
+                            <label for="description">Description:</label>
                             
                             {!! 
                                 Form::textarea(
@@ -74,7 +74,7 @@
                         </div>
                         
                         <div class="form-group">
-                            <label for="price">Precio:</label>
+                            <label for="price">Price:</label>
                             
                             {!! 
                                 Form::text(
@@ -82,14 +82,29 @@
                                     null, 
                                     array(
                                         'class'=>'form-control',
-                                        'placeholder' => 'Ingresa el precio...',
+                                        'placeholder' => 'Insert Price...',
+                                    )
+                                ) 
+                            !!}
+                        </div>
+
+                        <div class="form-group">
+                            <label for="price">Qty:</label>
+                            
+                            {!! 
+                                Form::text(
+                                    'qty', 
+                                    null, 
+                                    array(
+                                        'class'=>'form-control',
+                                        'placeholder' => 'Insert Quantity...',
                                     )
                                 ) 
                             !!}
                         </div>
                         
                         <div class="form-group">
-                            <label for="image">Imagen:</label>
+                            <label for="image">Image:</label>
                             
                             {!! 
                                 Form::text(
@@ -97,7 +112,7 @@
                                     null, 
                                     array(
                                         'class'=>'form-control',
-                                        'placeholder' => 'Ingresa la url de la imagen...',
+                                        'placeholder' => 'Insert an image url ...',
                                     )
                                 ) 
                             !!}
@@ -112,8 +127,8 @@
                         
                         
                         <div class="form-group">
-                            {!! Form::submit('Actualizar', array('class'=>'btn btn-primary')) !!}
-                            <a href="{{ route('admin.product.index') }}" class="btn btn-warning">Cancelar</a>
+                            {!! Form::submit('Confirm', array('class'=>'btn btn-primary')) !!}
+                            <a href="{{ route('admin.product.index') }}" class="btn btn-warning">Delete</a>
                         </div>
                     
                     {!! Form::close() !!}

@@ -6,9 +6,9 @@
 		<div class="page-header">
 			<h1>
 				<i class="fa fa-shopping-cart"></i>
-				PRODUCTOS 
+				PRODUCTS 
 				<a href="{{ route('admin.product.create') }}" class="btn btn-warning">
-					<i class="fa fa-plus-circle"></i> Producto
+					<i class="fa fa-plus-circle"></i> Add Product
 				</a>
 			</h1>
 		</div>
@@ -18,13 +18,13 @@
                 <table class="table table-striped table-bordered table-hover">
                     <thead>
                         <tr>
-                            <th>Editar</th>
-                            <th>Eliminar</th>
-                            <th>Imagen</th>
-                            <th>Nombre</th>
-                            <th>Categoría</th>
-                            <th>Extracto</th>
-                            <th>Precio</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                            <th>Image</th>
+                            <th>Name</th>
+                            <th>Category</th>
+                            <th>Description</th>
+                            <th>Price</th>
                             <th>Visible</th>
                         </tr>
                     </thead>
@@ -48,8 +48,8 @@
                                 <td>{{ $product->name }}</td>
                                 <td>{{ $product->category->name }}</td>
                                 <td>{{ $product->extract }}</td>
-                                <td>${{ number_format($product->price,2) }}</td>
-                                <td>{{ $product->visible == 1 ? "Si" : "No" }}</td>
+                                <td>£ {{ number_format($product->price,2) }}</td>
+                                <td>{{ $product->visible == 1 ? "Yes" : "No" }}</td>
                             </tr>
                         @endforeach
                     </tbody>

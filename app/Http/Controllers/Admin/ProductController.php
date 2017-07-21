@@ -51,6 +51,7 @@ class ProductController extends Controller
             'extract'       => $request->get('extract'),
             'price'         => $request->get('price'),
             'image'         => $request->get('image'),
+            'qty'           => $request->get('qty'),
             'visible'       => $request->has('visible') ? 1 : 0,
             'category_id'   => $request->get('category_id')
         ];
@@ -101,7 +102,7 @@ class ProductController extends Controller
         
         $updated = $product->save();
         
-        $message = $updated ? 'Producto actualizado correctamente!' : 'El Producto NO pudo actualizarse!';
+        $message = $updated ? 'Update Complete!' : 'Error Update Cot Complete!';
         
         return redirect()->route('admin.product.index')->with('message', $message);
     }
@@ -116,7 +117,7 @@ class ProductController extends Controller
     {
         $deleted = $product->delete();
         
-        $message = $deleted ? 'Producto eliminado correctamente!' : 'El producto NO pudo eliminarse!';
+        $message = $deleted ? 'Product Deleted!' : 'Error Product not deleted!';
         
         return redirect()->route('admin.product.index')->with('message', $message);
     }

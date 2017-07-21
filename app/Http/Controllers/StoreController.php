@@ -12,8 +12,9 @@ class StoreController extends Controller
 {
     public function index()
     {
-    	$products = Product::all();
-    	//dd($products);
+    	$products = Product::where('qty','>', 5)->get();
+   
+    	
     	return view('store.index', compact('products'));
     }
 

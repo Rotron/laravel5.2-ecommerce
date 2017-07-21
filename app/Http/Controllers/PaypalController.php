@@ -21,6 +21,7 @@ use PayPal\Api\Transaction;
 
 use App\Order;
 use App\OrderItem;
+use App\Product;
 
 class PaypalController extends BaseController
 {
@@ -175,6 +176,12 @@ class PaypalController extends BaseController
 	    $subtotal = 0;
 	    foreach($cart as $item){
 	        $subtotal += $item->price * $item->quantity;
+	    }
+
+	    foreach($cart as $item){
+	        $prod = \App\product::find($item->id);
+	        $prod->qty =  $prod->qty - $item->quantity;
+	        $prod->save();
 	    }
 	    
 	    $order = Order::create([

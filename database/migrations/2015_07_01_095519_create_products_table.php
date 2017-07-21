@@ -20,6 +20,7 @@ class CreateProductsTable extends Migration
             $table->string('extract', 300);
             $table->decimal('price', 5, 2);
             $table->string('image', 300);
+            $table->integer('qty')->unsigned();
             $table->boolean('visible');
             $table->integer('category_id')->unsigned();
             $table->foreign('category_id')
