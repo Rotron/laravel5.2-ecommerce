@@ -49,9 +49,22 @@ class CartController extends Controller
     {
     	$cart = \Session::get('cart');
     	$cart[$product->slug]->quantity = $quantity;
-    	\Session::put('cart', $cart);
+       
+        if ($quantity <= "0"){
 
-    	return redirect()->route('cart-show');
+        unset($cart[$product->slug]);
+        \Session::put('cart', $cart);
+
+        return redirect()->route('cart-show');
+        
+        }else{
+     
+        \Session::put('cart', $cart);
+
+        return redirect()->route('cart-show');
+
+        }
+    	
     }
 
     // Trash cart
