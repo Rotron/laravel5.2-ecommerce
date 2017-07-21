@@ -15,6 +15,9 @@ return [
 
     'debug' => env('APP_DEBUG', false),
    
+    /*Hide products if stock quantity is 5 for each*/
+    'indexstock' => '5',
+
 
     /*
     |--------------------------------------------------------------------------

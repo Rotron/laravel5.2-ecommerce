@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Product;
@@ -12,7 +11,10 @@ class StoreController extends Controller
 {
     public function index()
     {
-    	$products = Product::where('qty','>', 5)->get();
+
+    	$products = Product::where('qty','>', \Config::get('app.indexstock'))
+        ->where('visible','=', 1)
+        ->get();
    
     	
     	return view('store.index', compact('products'));
