@@ -35,15 +35,25 @@
 								<td>{{ $item->name }}</td>
 								<td>£ {{ number_format($item->price,2) }}</td>
 								<td>
-									{{ csrf_field() }}
-									<input 
+								
+
+
+        <div class="quantity">
+          <button class="plus-btn fa fa-plus" type="button" name="button">
+           
+          </button>
+          <input
 										type="number"
 										min="1"
 										max="100"
 										value="{{ $item->quantity }}"
 										id="product_{{ $item->id }}"
-									>
-									<a 
+			>
+          <button class="minus-btn fa fa-minus" type="button" name="button">
+           
+          </button>
+
+          <a 
 										href="#" 
 										class="btn btn-warning btn-update-item"
 										data-href="{{ $item->slug }}"
@@ -51,6 +61,9 @@
 									>
 										<i class="fa fa-refresh"></i>
 									</a>
+        </div>
+									
+									
 								</td>
 								<td>£ {{ number_format($item->price * $item->quantity,2) }}</td>
 								<td>
