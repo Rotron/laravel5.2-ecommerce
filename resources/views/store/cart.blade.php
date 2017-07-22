@@ -1,6 +1,7 @@
 @extends('store.template')
 
 @section('content')
+
 	<div class="container text-center">
 		<div class="page-header">
 		  <h1><i class="fa fa-shopping-cart"></i> Shopping Cart</h1>
@@ -34,6 +35,7 @@
 								<td>{{ $item->name }}</td>
 								<td>£ {{ number_format($item->price,2) }}</td>
 								<td>
+									{{ csrf_field() }}
 									<input 
 										type="number"
 										min="1"

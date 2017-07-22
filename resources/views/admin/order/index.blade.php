@@ -4,7 +4,7 @@
     <div class="container text-center">
         <div class="page-header">
             <h1>
-                <i class="fa fa-shopping-cart"></i> PEDIDOS
+                <i class="fa fa-shopping-cart"></i> ORDERS
             </h1>
         </div>
         
@@ -14,12 +14,12 @@
                 <table class="table table-striped table-bordered table-hover">
                     <thead>
                         <tr>
-                            <th>Ver Detalle</th>
-                            <th>Eliminar</th>
-                            <th>Fecha</th>
-                            <th>Usuario</th>
+                            <th>View Details</th>
+                            <th>Delete</th>
+                            <th>Date</th>
+                            <th>Usuer</th>
                             <th>Subtotal</th>
-                            <th>Envio</th>
+                            <th>Shipping</th>
                             <th>Total</th>
                         </tr>
                     </thead>
@@ -41,7 +41,7 @@
                                 </td>
                                 <td>
                                     {!! Form::open(['route' => ['admin.order.destroy', $order->id]]) !!}
-        								<button onClick="return confirm('Eliminar registro?')" class="btn btn-danger">
+        								<button onClick="return confirm('Delete record?')" class="btn btn-danger">
         									<i class="fa fa-trash-o"></i>
         								</button>
         							{!! Form::close() !!}

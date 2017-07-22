@@ -56,6 +56,8 @@ class CartController extends Controller
     // Update item
     public function update(Product $product, $quantity)
     {
+
+       
     	$cart = \Session::get('cart');    
         $cart[$product->slug]->quantity = $quantity;
         $qty = $cart[$product->slug]->qty ;
