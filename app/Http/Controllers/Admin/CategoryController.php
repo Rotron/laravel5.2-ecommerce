@@ -20,7 +20,7 @@ class CategoryController extends Controller
         $categories = Category::all();
         //dd($categories);
 
-        return view('admin.category.index', compact('categories'));
+        return view('adminz.category.index', compact('categories'));
     }
 
     /**
@@ -30,7 +30,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.category.create');
+        return view('adminz.category.create');
     }
 
     /**
@@ -56,7 +56,7 @@ class CategoryController extends Controller
         
         $message = $category ? 'Categoría agregada correctamente!' : 'La Categoría NO pudo agregarse!';
         
-        return redirect()->route('admin.category.index')->with('message', $message);
+        return redirect()->route('adminz.category.index')->with('message', $message);
     }
 
     /**
@@ -78,7 +78,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        return view('admin.category.edit', compact('category'));
+        return view('adminz.category.edit', compact('category'));
     }
 
     /**
@@ -101,7 +101,7 @@ class CategoryController extends Controller
         
         $message = $updated ? 'Categoría actualizada correctamente!' : 'La Categoría NO pudo actualizarse!';
         
-        return redirect()->route('admin.category.index')->with('message', $message);
+        return redirect()->route('adminz.category.index')->with('message', $message);
     }
 
     /**
@@ -116,6 +116,6 @@ class CategoryController extends Controller
         
         $message = $deleted ? 'Categoría eliminada correctamente!' : 'La Categoría NO pudo eliminarse!';
         
-        return redirect()->route('admin.category.index')->with('message', $message);
+        return redirect()->route('adminz.category.index')->with('message', $message);
     }
 }

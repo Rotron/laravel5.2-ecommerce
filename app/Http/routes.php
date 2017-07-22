@@ -118,12 +118,14 @@ Route::get('payment/status', array(
 
 // ADMIN -------------
 
-Route::group(['namespace' => 'Admin', 'middleware' => ['auth'], 'prefix' => 'admin'], function()
+Route::group(['namespace' => 'Admin', 'middleware' => ['auth'], 'prefix' => 'adminz'], function()
 {
 
-
+Route::get('/', function(){
+		return view('adminz.home');
+	});
 	Route::get('home', function(){
-		return view('admin.home');
+		return view('adminz.home');
 	});
 
 	Route::resource('category', 'CategoryController');
@@ -133,17 +135,17 @@ Route::group(['namespace' => 'Admin', 'middleware' => ['auth'], 'prefix' => 'adm
 	Route::resource('user', 'UserController');
 
 	Route::get('orders', [
-		'as' => 'admin.order.index',
+		'as' => 'adminz.order.index',
 		'uses' => 'OrderController@index'
 	]);
 
 	Route::post('order/get-items', [
-	    'as' => 'admin.order.getItems',
+	    'as' => 'adminz.order.getItems',
 	    'uses' => 'OrderController@getItems'
 	]);
 
 	Route::get('order/{id}', [
-	    'as' => 'admin.order.destroy',
+	    'as' => 'adminz.order.destroy',
 	    'uses' => 'OrderController@destroy'
 	]);
 

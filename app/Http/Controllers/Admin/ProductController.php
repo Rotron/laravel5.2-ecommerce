@@ -21,7 +21,7 @@ class ProductController extends Controller
     {
         $products = Product::orderBy('id', 'desc')->paginate(5);
         //dd($products);
-        return view('admin.product.index', compact('products'));
+        return view('adminz.product.index', compact('products'));
     }
 
     /**
@@ -33,7 +33,7 @@ class ProductController extends Controller
     {
         $categories = Category::orderBy('id', 'desc')->lists('name', 'id');
         //dd($categories);
-        return view('admin.product.create', compact('categories'));
+        return view('adminz.product.create', compact('categories'));
     }
 
     /**
@@ -60,7 +60,7 @@ class ProductController extends Controller
 
         $message = $product ? 'Producto agregado correctamente!' : 'El producto NO pudo agregarse!';
         
-        return redirect()->route('admin.product.index')->with('message', $message);
+        return redirect()->route('adminz.product.index')->with('message', $message);
     }
 
     /**
@@ -84,7 +84,7 @@ class ProductController extends Controller
     {
         $categories = Category::orderBy('id', 'desc')->lists('name', 'id');
 
-        return view('admin.product.edit', compact('categories', 'product'));
+        return view('adminz.product.edit', compact('categories', 'product'));
     }
 
     /**
@@ -104,7 +104,7 @@ class ProductController extends Controller
         
         $message = $updated ? 'Update Complete!' : 'Error Update Cot Complete!';
         
-        return redirect()->route('admin.product.index')->with('message', $message);
+        return redirect()->route('adminz.product.index')->with('message', $message);
     }
 
     /**
@@ -119,6 +119,6 @@ class ProductController extends Controller
         
         $message = $deleted ? 'Product Deleted!' : 'Error Product not deleted!';
         
-        return redirect()->route('admin.product.index')->with('message', $message);
+        return redirect()->route('adminz.product.index')->with('message', $message);
     }
 }

@@ -20,7 +20,7 @@ class UserController extends Controller
     {
         $users = User::orderBy('name')->paginate(5);
         //dd($users);
-        return view('admin.user.index', compact('users'));
+        return view('adminz.user.index', compact('users'));
     }
 
     /**
@@ -30,7 +30,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('admin.user.create');
+        return view('adminz.user.create');
     }
 
     /**
@@ -56,7 +56,7 @@ class UserController extends Controller
 
         $message = $user ? 'Usuario agregado correctamente!' : 'El usuario NO pudo agregarse!';
         
-        return redirect()->route('admin.user.index')->with('message', $message);
+        return redirect()->route('adminz.user.index')->with('message', $message);
     }
 
     /**
@@ -78,7 +78,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        return view('admin.user.edit', compact('user'));
+        return view('adminz.user.edit', compact('user'));
     }
 
     /**
@@ -114,7 +114,7 @@ class UserController extends Controller
         
         $message = $updated ? 'Usuario actualizado correctamente!' : 'El Usuario NO pudo actualizarse!';
         
-        return redirect()->route('admin.user.index')->with('message', $message);
+        return redirect()->route('adminz.user.index')->with('message', $message);
     }
 
     /**
@@ -129,6 +129,6 @@ class UserController extends Controller
         
         $message = $deleted ? 'Usuario eliminado correctamente!' : 'El Usuario NO pudo eliminarse!';
         
-        return redirect()->route('admin.user.index')->with('message', $message);
+        return redirect()->route('adminz.user.index')->with('message', $message);
     }
 }

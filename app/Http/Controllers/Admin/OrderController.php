@@ -15,7 +15,7 @@ class OrderController extends Controller
     {
     	$orders = Order::orderBy('id', 'desc')->paginate(5);
     	//dd($orders);
-    	return view('admin.order.index', compact('orders'));
+    	return view('adminz.order.index', compact('orders'));
     }
 
     public function getItems(Request $request)
@@ -32,6 +32,6 @@ class OrderController extends Controller
         
         $message = $deleted ? 'Pedido eliminado correctamente!' : 'El Pedido NO pudo eliminarse!';
         
-        return redirect()->route('admin.order.index')->with('message', $message);
+        return redirect()->route('adminz.order.index')->with('message', $message);
     }
 }
