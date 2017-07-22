@@ -41,13 +41,15 @@
 					</span>
 				</h3><hr>
 				<p>
+					<div class="btn-group btn-group-justified">
 					<a href="{{ route('cart-show') }}" class="btn btn-primary">
 						<i class="fa fa-chevron-circle-left"></i> Go to cart
 					</a>
 
-					<a href="{{ route('payment') }}" class="btn btn-warning">
-						Pay Now <i class="fa fa-cc-paypal fa-2x"></i>
+					<a href="{{ route('payment') }}" class="btn btn-warning btn-lg ">
+						<i class="fa fa-cc-paypal fa-5x"></i></br>
 					</a>
+					</div>
 				</p>
 			</div>
 		</div>

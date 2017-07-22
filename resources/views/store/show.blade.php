@@ -20,10 +20,12 @@
 					<h3>
 						<span class="label label-success">Price: £ {{ number_format($product->price,2) }}</span>
 					</h3>
-					<p>
+					<br>
+					<p><div class="btn-group btn-group-justified">
 						<a class="btn btn-warning btn-block" href="{{ route('cart-add', $product->slug) }}">
-							Buy Now <i class="fa fa-cart-plus fa-2x"></i>
+							<text class="fa-2x">ADD TO CART</text> <i class="fa fa-cart-plus fa-2x"></i>
 						</a>
+					</div>
 					</p>
 				</div>
 			</div>	
@@ -32,7 +34,7 @@
 
 	<p>
 		<a class="btn btn-primary" href="{{ route('home') }}">
-			<i class="fa fa-chevron-circle-left"></i> Go Back
+			<i class="fa fa-chevron-circle-left fa-2x"></i> <text class="fa-2x">Go Back</text>
 		</a>
 	</p>
 </div>

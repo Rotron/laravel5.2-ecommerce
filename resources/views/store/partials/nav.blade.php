@@ -13,7 +13,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <p class="navbar-text">My Laravel Store</p>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="{{ route('cart-show') }}"><i class="fa fa-shopping-cart"></i></a></li>
+        <li><a href="{{ route('cart-show') }}"><i class="fa fa-shopping-cart"></i> Cart</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Contacts</a></li>
         @include('store.partials.menu-user')

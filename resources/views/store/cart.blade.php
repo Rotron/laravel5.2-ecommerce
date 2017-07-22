@@ -72,18 +72,35 @@
 			</div>
 			@else
 				<h3><span class="label label-warning">Your cart is empty!</span></h3>
-			@endif
-			<hr>
+					<hr>
 			<p>
-				<a href="{{ route('home') }}" class="btn btn-primary">
+				<a href="{{ route('home') }}" class="btn btn-primary btn-lg">
 					<i class="fa fa-chevron-circle-left"></i> Continue shopping
 				</a>
 
-				<a href="{{ route('order-detail') }}" class="btn btn-primary">
-				 Checkout <i class="fa fa-chevron-circle-right"></i>
-				</a>
+			
 			</p>
 		</div>
 
 	</div>
+			@endif
+				<hr>
+			<p>
+			
+
+
+					<div class="btn-group btn-group-justified">
+					<a href="{{ route('home') }}" class="btn btn-primary">
+						<i class="fa fa-chevron-circle-left"></i><text class="fa-1x"> Continue shopping</text>
+					</a>
+
+					<a href="{{ route('order-detail') }}" class="btn btn-warning btn-lg ">
+						<i class="fa fa-chevron-down fa-1x"></i> <text class="fa-1x">Checkout</text></br>
+					</a>
+					</div>
+			</p>
+		</div>
+
+	</div>
+		
 @stop

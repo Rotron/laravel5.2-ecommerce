@@ -19,4 +19,6 @@ $(document).ready(function() {
 		window.location.href = "/cart/update/" + href + "/" + quantity;
 	});
 
+	
+
 });
