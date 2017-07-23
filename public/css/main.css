@@ -178,7 +178,7 @@ transition: all 0.3s ease-in-out;
   font-weight: 300;
 }
  
-button[class*=btn] {
+button[class*=btn2] {
   width: 30px;
   height: 30px;
   background-color: #E1E8EE;

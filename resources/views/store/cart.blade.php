@@ -39,7 +39,7 @@
 
 
         <div class="quantity">
-          <button class="plus-btn fa fa-plus" type="button" name="button">
+          <button class="plus-btn fa fa-plus btn2" type="button" name="button">
            
           </button>
           <input
@@ -49,11 +49,11 @@
 										value="{{ $item->quantity }}"
 										id="product_{{ $item->id }}"
 			>
-          <button class="minus-btn fa fa-minus" type="button" name="button">
+          <button class="minus-btn fa fa-minus btn2" type="button" name="button">
            
           </button>
 
-          <a 
+          <a 							name="update"
 										href="#" 
 										class="btn btn-warning btn-update-item"
 										data-href="{{ $item->slug }}"

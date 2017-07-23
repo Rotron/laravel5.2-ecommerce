@@ -54,4 +54,16 @@ $('.plus-btn').on('click', function(e) {
     $input.val(value);
 });
 
+
+
+        $('.product-info').find('a').click(function (event){
+            event.preventDefault();
+            $.ajax({
+                url: $(this).attr('href')
+                ,success: function(response) {
+                    alert("product added")
+                }
+            });
+            return false; //for good measure
+        });
 });

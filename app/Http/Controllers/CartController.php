@@ -36,7 +36,8 @@ class CartController extends Controller
     public function add(Product $product)
     {
     	$cart = \Session::get('cart');
-    	$product->quantity = 1;
+    	
+        $product->quantity = 1;
     	$cart[$product->slug] = $product;
     	\Session::put('cart', $cart);
 
