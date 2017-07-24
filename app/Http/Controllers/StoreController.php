@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Product;
-use KamranAhmed\Geocode\Geocode;
+use Rotron\Geocode\Geocode;
 
 class StoreController extends Controller
 {
