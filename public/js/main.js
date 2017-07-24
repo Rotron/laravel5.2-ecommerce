@@ -68,9 +68,32 @@ $('.plus-btn').on('click', function(e) {
                     { className: 'success',  autoHide: true, style: 'bootstrap' }
 
                     );
+totalcart();
                     
                 }
             });
             return false; //for good measure
         });
+
+
+function totalcart()
+{  
+    // jQuery async request
+    $.ajax(
+    {
+        url: '/conta',
+        dataType: "html",
+        success: function(data) {
+                                    $('#tot').html(data);
+                                },
+        error: function(e) 
+        {
+            alert('Error: ' + e);
+        }
+    });
+}
+
+
+totalcart();
+
 });

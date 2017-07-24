@@ -37,6 +37,7 @@ Route::get('product/{slug}', [
 ]);
 
 // Cart -------------
+Route::get('conta', 'CartController@conta');
 
 Route::get('cart/show', [
 	'as' => 'cart-show',
