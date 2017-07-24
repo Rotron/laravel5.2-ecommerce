@@ -1,13 +1,9 @@
 @extends('store.template')
-
- 
-
-
 <!-- Main Content -->
 @section('content')
-<div class="container">
+<div class="container text-center">
     <div class="row">
-         <div class="pageheader">
+         <div class="page-header">
          <h1><i class="fa fa-user"></i> Password Reset</h1>
        </div>
         <div class="col-md-8 col-md-offset-2">

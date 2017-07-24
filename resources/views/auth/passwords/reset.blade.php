@@ -2,7 +2,8 @@
 
 @section('content')
 <div class="container">
-     <div class="pageheader">
+
+     <div class="page-header">
          <h1><i class="fa fa-user"></i> Reset Password</h1>
        </div>
     <div class="row">
