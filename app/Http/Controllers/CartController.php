@@ -21,7 +21,7 @@ class CartController extends Controller
         $cart = \Session::get('cart');
         $total = $this->total();
 
-        return 'Cart - Total: £'.number_format($total,2);
+        return 'Total: £'.number_format($total,2);
     }
 
 

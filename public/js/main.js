@@ -68,8 +68,7 @@ $('.plus-btn').on('click', function(e) {
                     { className: 'success',  autoHide: true, style: 'bootstrap' }
 
                     );
-totalcart();
-                    
+                    totalcart();            
                 }
             });
             return false; //for good measure
@@ -84,7 +83,8 @@ function totalcart()
         url: '/conta',
         dataType: "html",
         success: function(data) {
-                                    $('#tot').html(data);
+                $('#tot').html(data);
+                $('#tot2').html(data);
                                 },
         error: function(e) 
         {
@@ -92,7 +92,6 @@ function totalcart()
         }
     });
 }
-
 
 totalcart();
 

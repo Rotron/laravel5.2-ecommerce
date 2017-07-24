@@ -6,7 +6,7 @@
 
   <div class="col-xs-12 navbar-inverse navbar-fixed-bottom">
   <div class="row" id="bottomNav">
-    <div class="col-xs-4 text-center"><a href="/cart/show" class="{{ Request::is('cart*') ? 'active' : '' }}"><i class="fa fa-shopping-cart" aria-hidden="true"></i><br>Cart</a></div>
+    <div class="col-xs-4 text-center"><a href="/cart/show" class="{{ Request::is('cart*') ? 'active' : '' }}"><i class="fa fa-shopping-cart" aria-hidden="true"></i><br><text id ="tot2"></text></a></div>
     <div class="col-xs-4 text-center"><a href="/" class="{{ Request::is('/*') ? 'active' : null }} "><i class="fa fa-home" aria-hidden="true"></i><br>Home</a></div>
     <div class="col-xs-4 text-center"><a href="/order-detail" class="{{Request::is('auth*') ? 'active' : null }}{{ Request::is('order-detail*') ? 'active' : null}}"><i class="fa fa-cc-paypal" aria-hidden="true"></i><br>Checkout</a></div>
   </div>
@@ -15,7 +15,11 @@
 	<div class="row" style="margin-bottom:8%;">
 		<div class="col-md-4">
 			<h3>My Laravel Store</h3>
-			<p>Ab consectetur, quasi!</p>
+			<div class="author-info">
+			
+			Ab consectetur, quasi!
+			</div>
+			
 		</div>
 		<div class="col-md-4">
 			<h3>Contacts:</h3>

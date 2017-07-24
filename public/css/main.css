@@ -9,6 +9,17 @@ h1,h2,h3,h4,h5,h6
 	font-family: 'Lobster Two', cursive;
 }
 
+
+.container {
+margin-top:50px;
+
+}
+
+#slider {
+margin-top:50px;
+
+}
+
 /* Nav ----------*/
 .main-title
 {
@@ -46,6 +57,28 @@ ul.redes li a
 	height: 100px;
 	width: 100px;
 }
+
+/*Nav Bar Fix*/
+  .affix {
+      top:0;
+      width: 100%;
+      z-index: 9999 !important;
+  }
+  .navbar {
+      margin-bottom: 0px;
+  }
+
+  .affix ~ .container-fluid {
+     position: relative;
+     top: 50px;
+  }
+
+
+
+
+
+
+
 
 /* Catalogo -------------*/
 #products {
