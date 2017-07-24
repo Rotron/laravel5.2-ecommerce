@@ -56,12 +56,19 @@ $('.plus-btn').on('click', function(e) {
 
 
 
-        $('.product-info').find('a').click(function (event){
+        $('.product-info').find('a.add').click(function (event){
             event.preventDefault();
+            var clicked = $(this); 
             $.ajax({
                 url: $(this).attr('href')
                 ,success: function(response) {
-                    alert("product added")
+                
+                   $(clicked).notify(
+                    "Product Added", 
+                    { className: 'success',  autoHide: true, style: 'bootstrap' }
+
+                    );
+                    
                 }
             });
             return false; //for good measure

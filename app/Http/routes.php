@@ -36,7 +36,7 @@ Route::get('product/{slug}', [
 	'uses' => 'StoreController@show'
 ]);
 
-// Carrito -------------
+// Cart -------------
 
 Route::get('cart/show', [
 	'as' => 'cart-show',
@@ -103,13 +103,13 @@ Route::post('password/email', ['as' => 'auth.password.email', 'uses' => 'Auth\Pa
 Route::post('password/reset', ['as' => 'auth.password.reset', 'uses' => 'Auth\PasswordController@reset']);
 // Paypal
 
-// Enviamos nuestro pedido a PayPal
+// Send Order To  PayPal
 Route::get('payment', array(
 	'as' => 'payment',
 	'uses' => 'PaypalController@postPayment',
 ));
 
-// Después de realizar el pago Paypal redirecciona a esta ruta
+// After making payment Paypal redirects to this route
 Route::get('payment/status', array(
 	'as' => 'payment.status',
 	'uses' => 'PaypalController@getPaymentStatus',
