@@ -11,6 +11,12 @@
 |
 */
 
+
+
+Route::get('/location/', 'StoreController@locationshow');
+Route::post('/location/', 'StoreController@location');
+
+
 Route::bind('product', function($slug){
 	return App\Product::where('slug', $slug)->first();
 });
