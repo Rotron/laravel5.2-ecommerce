@@ -76,6 +76,28 @@ Route::get('order-detail', [
 	'uses' => 'CartController@orderDetail'
 ]);
 
+/*Start User Profile Routes*/
+
+Route::get('profile', [
+	'middleware' => 'auth:user',
+	'as' => 'profile',
+	'uses' => 'UserProfileController@index'
+]);
+
+Route::get('reset-password', [
+	'middleware' => 'auth:user',
+	'as' => 'reset-password',
+	'uses' => 'UserProfileController@password'
+]);
+
+Route::post('reset-password', [
+	'middleware' => 'auth:user',
+	'as' => 'reset-password',
+	'uses' => 'UserProfileController@resetPassword'
+]);
+/*End User Profile Routes*/
+
+
 
 // Authentication routes...
 Route::get('auth/login', [
